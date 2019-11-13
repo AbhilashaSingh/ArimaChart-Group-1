@@ -1,0 +1,28 @@
+<div class="width-100">
+<div>
+        <div class="row">
+
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 header">
+                        Predicted
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 header">
+                        Expected
+                    </div>
+                </div>
+</div>
+<div *ngFor="let row of data.prediction">
+    <div class="row">
+
+    <div class="col-xs-6 col-sm-6 col-md-6  col-lg-6">
+            {{row.Predicted}}
+        </div>
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            {{row.Expected}}
+        </div>
+    </div>
+</div>
+<div>&nbsp;</div>
+<a [href]="data.chartUrl" class="show-button">
+    Show Chart
+</a>
+</div>
