@@ -7,6 +7,7 @@ import { DataviewService } from '../dataview/dataview.service';
 })
 export class DataviewComponent implements OnInit {
   data;
+  showChartImg = false;
   constructor(private dataviewService : DataviewService) { }
 
   ngOnInit() {
@@ -14,5 +15,9 @@ export class DataviewComponent implements OnInit {
       this.data = data;
     });
   }
-  
+
+  showChart(){
+    //this.showChartImg = !this.showChartImg;
+  }
+
 }
