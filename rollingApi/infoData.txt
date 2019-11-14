@@ -4,7 +4,7 @@ Dep. Variable:                D.Sales   No. Observations:                   35
 Model:                 ARIMA(5, 1, 0)   Log Likelihood                -196.170
 Method:                       css-mle   S.D. of innovations             64.241
 Date:                Thu, 14 Nov 2019   AIC                            406.340
-Time:                        00:19:12   BIC                            417.227
+Time:                        00:46:21   BIC                            417.227
 Sample:                    02-01-1901   HQIC                           410.098
                          - 12-01-1903                                         
 =================================================================================

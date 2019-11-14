@@ -50,7 +50,7 @@ def get_series():
  pyplot.plot(test)
  pyplot.plot(predictions, color='red')
  #pyplot.show()
- pyplot.savefig('rollig.png', bbox_inches='tight')
+ pyplot.savefig('rolling.png', bbox_inches='tight')
  objOutput = {"Prediction": respObj, "MSE": '%.3f' % error, "Chart" : "rolling.png"}
  #print(json.dumps(objOutput))
  return json.dumps(objOutput)

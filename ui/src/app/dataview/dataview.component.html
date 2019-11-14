@@ -29,9 +29,6 @@
     </div>
 </div>
 <div>&nbsp;</div>
-<a (click)="showChart()" class="show-button">
-    Show Rolling Prediction Chart
-</a>
 </div>
 
 <!--Summary-->
@@ -44,17 +41,8 @@
         
                     <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
                 </div>
-                <div class="row">
-        
-                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 header">
-                                Predicted
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 header">
-                                Expected
-                            </div>
-                        </div>
         </div>
-        <div *ngFor="let row of data">
+        <div *ngFor="let row of summaryData">
             <div class="row">
         
             <div class="col-xs-12 col-sm-12 col-md-12  col-lg-12">
@@ -63,7 +51,14 @@
             </div>
         </div>
         <div>&nbsp;</div>
+        <div>
         <a (click)="showChart()" class="show-button">
-            Show Summary Chart
+            <span *ngIf="!showChartImg"> Show</span><span *ngIf="showChartImg">Hide</span>  Chart
         </a>
+        </div>
+        <div>
+        <img *ngIf="showChartImg" src="../../assets/rolling.png"/>
+        <img *ngIf="showChartImg" src="../../assets/arima_1.png"/>
+        <img *ngIf="showChartImg" src="../../assets/arima_2.png"/>
+        </div>
 </div>

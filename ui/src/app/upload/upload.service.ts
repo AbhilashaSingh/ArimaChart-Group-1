@@ -49,7 +49,7 @@ export class UploadService {
           progress.complete();
         }
       });
-
+      
       // Save every progress-observable in a map of all observables
       status[file.name] = {
         progress: progress.asObservable()

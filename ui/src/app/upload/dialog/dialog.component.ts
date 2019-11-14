@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialogRef } from '@angular/material';
 import { UploadService } from '../upload.service';
 import { forkJoin } from 'rxjs';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-dialog',
@@ -13,7 +14,7 @@ export class DialogComponent implements OnInit {
 
   public files: Set<File> = new Set();
 
-  constructor(public dialogRef: MatDialogRef<DialogComponent>, public uploadService: UploadService) { }
+  constructor(public dialogRef: MatDialogRef<DialogComponent>, public uploadService: UploadService, private router: Router) { }
 
   ngOnInit() { }
 
@@ -81,6 +82,7 @@ export class DialogComponent implements OnInit {
 
       // ... and the component is no longer uploading
       this.uploading = false;
+      this.router.navigate(['data-view']);
     });
   }
 }
