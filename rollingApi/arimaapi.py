@@ -20,7 +20,19 @@ from pandas import DataFrame
 from statsmodels.tsa.arima_model import ARIMA
 
 companies = [{"id": 1, "name": "Company One"}, {"id": 2, "name": "Company Two"}]
-
+def application(environ, start_response):
+  if environ['REQUEST_METHOD'] == 'GET':
+    print('hello from header')  
+    start_response(
+      '200 OK',
+      [
+        ('Content-Type', 'application/json'),
+        ('Access-Control-Allow-Origin', '*'),
+        ('Access-Control-Allow-Headers', 'Authorization, Content-Type'),
+        ('Access-Control-Allow-Methods', 'GET'),
+      ]
+    )
+    return ''
 app= Flask(__name__)
 @app.route("/")
 def hello():
@@ -44,7 +56,7 @@ def parser(x):
 	return datetime.strptime('190'+x, '%Y-%m')
 
 
-@app.route('/series', methods=['GET'])
+@app.route('/series', methods=['GET'], )
 def get_series():
  print('Call started')
  series = read_csv('shampoo.csv', header=0, parse_dates=[0], index_col=0, squeeze=True, date_parser=parser)

@@ -4,9 +4,12 @@ from matplotlib import pyplot
 from statsmodels.tsa.arima_model import ARIMA
 from sklearn.metrics import mean_squared_error
 from flask import Flask, json
+from flask import Flask
+from flask_cors import CORS
 import json
 
 app= Flask(__name__)
+cors = CORS(app, resources={r"/*": {"origins": "*"}})
 
 class Prediction:
   def __init__(self, predicted, expected):

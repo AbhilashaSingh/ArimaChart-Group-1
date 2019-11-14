@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { DataviewComponent } from './dataview/dataview.component';
 import { DataviewService } from './dataview/dataview.service';
 import { HttpClientModule } from '@angular/common/http';
+import { UploadModule } from './upload/upload.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    UploadModule
   ],
   providers: [DataviewService],
   bootstrap: [AppComponent]
