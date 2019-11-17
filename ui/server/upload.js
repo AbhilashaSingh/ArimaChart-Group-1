@@ -1,3 +1,4 @@
+'use strict';
 const IncomingForm = require('formidable').IncomingForm;
 const fs = require('fs');
 
@@ -6,9 +7,11 @@ module.exports = function upload(req, res) {
   var fstream = '';
   var readStream = '';
   form.on('file', (field, file) => {
-    const __dirname = '/Users/kinshu/Documents/TCS Full Stack/HackathonFullStackTCS/ui/uploaded-file/';
+    let rawdata = fs.readFileSync('config.json');
+    let student = JSON.parse(rawdata);
     readStream = fs.createReadStream(file.path);
-    fstream = fs.createWriteStream(__dirname + file.name);
+    console.log(student.filePath);
+    fstream = fs.createWriteStream(student.filePath);
   });
   form.on('end', () => {
     readStream.pipe(fstream);

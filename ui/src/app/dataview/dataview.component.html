@@ -60,9 +60,13 @@
         </a>
         </div>
         <div>
-        <img *ngIf="showChartImg" src="../../assets/rolling.png"/>
-        <img *ngIf="showChartImg" src="../../assets/arima_1.png"/>
-        <img *ngIf="showChartImg" src="../../assets/arima_2.png"/>
+        <img *ngIf="showChartImg" [src]="residual_1Path"/>
+        </div>
+        <div>
+        <img *ngIf="showChartImg" [src]="residual_2Path"/>
+        </div>
+        <div>
+        <img *ngIf="showChartImg" [src]="rollingPath"/>
         </div>
 </div>
 

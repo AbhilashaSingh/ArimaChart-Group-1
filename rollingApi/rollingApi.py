@@ -74,11 +74,11 @@ def get_arimaseries():
  residuals = DataFrame(model_fit.resid)
  residuals.plot()
  #pyplot.show()
- pyplot.savefig('arima_1', bbox_inches='tight')
+ pyplot.savefig('residual_1', bbox_inches='tight')
  residuals.plot(kind='kde')
  #pyplot.show()
  print(residuals.describe())
- pyplot.savefig('arima_2', bbox_inches='tight')
+ pyplot.savefig('residual_2', bbox_inches='tight')
  objOutput = {"response": listToString(strFile)}
  return json.dumps(objOutput)
 
