@@ -17,9 +17,10 @@ def listToString(s):
     # initialize an empty string 
     str1 = ""  
     # traverse in the string   
-    for ele in s:  
-        str1 += ele   
-    # return string   
+    for ele in s: 
+        str1 += ele.replace(" ", "&nbsp;").replace("\t", "&nbsp;&nbsp;&nbsp;&nbsp;").replace("\n", "<br/>")
+	# return string   
+	
     return str1  
 
 
