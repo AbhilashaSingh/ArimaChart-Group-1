@@ -39,7 +39,10 @@ export class DialogComponent implements OnInit {
   }
 
   redirectToDataView() {
-    this.router.navigate(['data-view']);
+    if(this.primaryButtonText === 'Finish'){
+
+      this.router.navigate(['data-view']);
+    }
   }
   redirectToHome() {
     this.router.navigate(['']);

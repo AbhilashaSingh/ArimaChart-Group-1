@@ -12,6 +12,6 @@ export class DataviewResolver implements Resolve<any> {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<any>|Promise<any>|any {
-    return this.service.loadData();
+    return [this.service.loadData(), this.service.loadSummaryData()];
   }
 }
