@@ -32,7 +32,7 @@
 </div>
 
 <!--Summary-->
-<div class="width-100" *ngIf="summaryData">
+<div class="width-100" *ngIf="data && summaryData">
         <div>
                 <div class="row">
         
@@ -42,14 +42,17 @@
                     <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
                 </div>
         </div>
-        <div *ngFor="let row of summaryData">
+        <!--<div *ngFor="let row of summaryData">
             <div class="row">
         
             <div class="col-xs-12 col-sm-12 col-md-12  col-lg-12">
                     {{row}}   
             </div>
             </div>
-        </div>
+        </div>-->
+            
+
+        <div [innerHTML]="summaryData"></div>
         <div>&nbsp;</div>
         <div>
         <a (click)="showChart()" class="show-button">
@@ -61,4 +64,8 @@
         <img *ngIf="showChartImg" src="../../assets/arima_1.png"/>
         <img *ngIf="showChartImg" src="../../assets/arima_2.png"/>
         </div>
+</div>
+
+<div *ngIf="!data" class="loading">
+<img src="../../assets/loading.gif">
 </div>
