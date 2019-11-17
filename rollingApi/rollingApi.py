@@ -17,9 +17,10 @@ def listToString(s):
     # initialize an empty string 
     str1 = ""  
     # traverse in the string   
-    for ele in s:  
-        str1 += ele   
-    # return string   
+    for ele in s: 
+        str1 += ele.replace(" ", "&nbsp;").replace("\t", "&nbsp;&nbsp;&nbsp;&nbsp;").replace("\n", "<br/>")
+	# return string   
+	
     return str1  
 
 
@@ -50,7 +51,7 @@ def get_series():
  pyplot.plot(test)
  pyplot.plot(predictions, color='red')
  #pyplot.show()
- pyplot.savefig('rolling.png', bbox_inches='tight')
+ pyplot.savefig('./images/rolling.png', bbox_inches='tight')
  objOutput = {"Prediction": respObj, "MSE": '%.3f' % error, "Chart" : "rolling.png"}
  #print(json.dumps(objOutput))
  return json.dumps(objOutput)
@@ -74,11 +75,11 @@ def get_arimaseries():
  residuals = DataFrame(model_fit.resid)
  residuals.plot()
  #pyplot.show()
- pyplot.savefig('residual_1', bbox_inches='tight')
+ pyplot.savefig('./images/residual_1', bbox_inches='tight')
  residuals.plot(kind='kde')
  #pyplot.show()
  print(residuals.describe())
- pyplot.savefig('residual_2', bbox_inches='tight')
+ pyplot.savefig('./images/residual_2', bbox_inches='tight')
  objOutput = {"response": listToString(strFile)}
  return json.dumps(objOutput)
 
