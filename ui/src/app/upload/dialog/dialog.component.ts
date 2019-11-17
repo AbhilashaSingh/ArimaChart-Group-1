@@ -39,15 +39,14 @@ export class DialogComponent implements OnInit {
   }
 
   redirectToDataView() {
-    if(this.primaryButtonText === 'Finish'){
-
+    if(this.primaryButtonText === 'Finish' && this.uploadSuccessful){
       this.router.navigate(['data-view']);
     }
   }
+
   redirectToHome() {
     this.router.navigate(['']);
   }
-
 
   closeDialog() {
     // if everything was uploaded already, just close the dialog

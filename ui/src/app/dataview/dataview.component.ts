@@ -16,7 +16,7 @@ export class DataviewComponent implements OnInit {
       this.route.snapshot.data.data[0].subscribe((data)=>{
         this.data = data;
         this.route.snapshot.data.data[1].subscribe((summaryData)=>{
-          this.summaryData = summaryData;
+          this.summaryData = summaryData.response;
         })
       });
     }
