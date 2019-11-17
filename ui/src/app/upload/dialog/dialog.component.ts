@@ -38,6 +38,10 @@ export class DialogComponent implements OnInit {
     this.file.nativeElement.click();
   }
 
+  redirectToDataView() {
+    this.router.navigate(['data-view']);
+  }
+
   closeDialog() {
     // if everything was uploaded already, just close the dialog
     if (this.uploadSuccessful) {
@@ -72,7 +76,8 @@ export class DialogComponent implements OnInit {
     this.showCancelButton = false;
 
     // When all progress-observables are completed...
-    forkJoin(allProgressObservables).subscribe(end => {
+    forkJoin(allProgressObservables)
+    .subscribe(end => {
       // ... the dialog can be closed again...
       this.canBeClosed = true;
       this.dialogRef.disableClose = false;
@@ -82,7 +87,6 @@ export class DialogComponent implements OnInit {
 
       // ... and the component is no longer uploading
       this.uploading = false;
-      this.router.navigate(['data-view']);
     });
   }
 }
