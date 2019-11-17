@@ -1,1 +1,4 @@
-<button mat-raised-button (click)="openUploadDialog()" class="btn-primary">Upload your file</button>
+
+<ng-container *ngIf="blnShow">
+    <button mat-raised-button (click)="openUploadDialog()" class="btn-primary">Upload your file</button>
+</ng-container>

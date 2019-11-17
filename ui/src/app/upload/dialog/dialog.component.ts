@@ -41,6 +41,10 @@ export class DialogComponent implements OnInit {
   redirectToDataView() {
     this.router.navigate(['data-view']);
   }
+  redirectToHome() {
+    this.router.navigate(['']);
+  }
+
 
   closeDialog() {
     // if everything was uploaded already, just close the dialog

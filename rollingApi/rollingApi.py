@@ -79,7 +79,8 @@ def get_arimaseries():
  #pyplot.show()
  print(residuals.describe())
  pyplot.savefig('arima_2', bbox_inches='tight')
- return json.dumps(listToString(strFile))
+ objOutput = {"response": listToString(strFile)}
+ return json.dumps(objOutput)
 
 if __name__ == "__main__":
     app.run()
