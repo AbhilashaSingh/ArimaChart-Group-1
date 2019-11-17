@@ -1,5 +1,5 @@
 {
-    "residual_1Chart": "../../assets/residual_1.png",
-    "rollingChart": "../../assets/rolling.png",
-    "residual_2Chart":"../../assets/residual_2.png"
+    "residual_1Chart": "http://localhost/repocharts/residual_1.png",
+    "rollingChart": "http://localhost/repocharts/rolling.png",
+    "residual_2Chart":"http://localhost/repocharts/residual_2.png"
 }
