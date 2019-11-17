@@ -9,9 +9,11 @@ import { UploadService } from './upload.service';
   styleUrls: ['./upload.component.scss']
 })
 export class UploadComponent {
+  blnShow :boolean = true;
   constructor(public dialog: MatDialog, public uploadService: UploadService) { }
 
   public openUploadDialog() {
+    this.blnShow = !this.blnShow;
     let dialogRef = this.dialog.open(DialogComponent, { width: '50%', height: '50%' });
   }
 }
